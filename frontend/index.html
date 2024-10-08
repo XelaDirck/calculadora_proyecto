@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <div class="calculator">
+        <div class="menu">
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <div id="menu-content" class="menu-content">
+                <button onclick="switchCalculator('basic')">Calculadora Básica</button>
+                <button onclick="switchCalculator('scientific')">Calculadora Científica</button>
+                <button onclick="switchCalculator('graph')">Calculadora Graficadora</button>
+                <button onclick="toggleTheme()">Cambiar Tema</button>
+            </div>
+        </div>
+        <div class="display">
+            <input type="text" id="display" disabled>
+            <div id="xp-display">XP: 100</div>
+        </div>
+        <div class="buttons" id="basic-buttons">
+            <!-- Botones de la calculadora básica -->
+            <button onclick="input('1')">1</button>
+            <button onclick="input('2')">2</button>
+            <button onclick="input('3')">3</button>
+            <button onclick="operation('+')">+</button>
+            <button onclick="input('4')">4</button>
+            <button onclick="input('5')">5</button>
+            <button onclick="input('6')">6</button>
+            <button onclick="operation('-')">-</button>
+            <button onclick="input('7')">7</button>
+            <button onclick="input('8')">8</button>
+            <button onclick="input('9')">9</button>
+            <button onclick="operation('*')">*</button>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="input('0')">0</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="operation('/')">/</button>
+        </div>
+        <div class="buttons" id="scientific-buttons" style="display:none;">
+            <!-- Botones para la calculadora científica (Windows 11) -->
+            <button onclick="operation('sin')">sin</button>
+            <button onclick="operation('cos')">cos</button>
+            <button onclick="operation('tan')">tan</button>
+            <button onclick="operation('log')">log</button>
+            <button onclick="operation('sqrt')">√</button>
+            <button onclick="operation('pow')">x^y</button>
+            <button onclick="operation('exp')">exp</button>
+            <button onclick="operation('pi')">π</button>
+            <button onclick="operation('e')">e</button>
+            <!-- Más botones según sea necesario -->
+        </div>
+        <div class="buttons" id="graph-buttons" style="display:none;">
+            <button onclick="graphFunction()">Graficar</button>
+        </div>
+    </div>
+    <div id="history">
+        <h3>Historial de Operaciones</h3>
+        <ul id="history-list"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
